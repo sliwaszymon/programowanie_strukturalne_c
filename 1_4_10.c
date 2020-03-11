@@ -14,7 +14,7 @@ int main() {
 				wynik = i;
 			}
 		}
-		printf("Pierwiastek z twojej liczby to %d", wynik);
+		printf("Czesc calkowita pierwiastka z twojej liczby to %d", wynik);
 	}
 	return 0;
 }
