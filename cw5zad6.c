@@ -10,10 +10,6 @@ int main()
 	p2 = &n;
 	o = *p1+*p2;
 	p3 = p1-p2; //p1 = 0x0062fe3c , *p1 = 5
-	printf("%d\n", &p1);
-	printf("%#010x\n", p1);
 	p1++;
 	p2--; //p2 = 0x0062fe34 , *p2 = 6487592
-	printf("%d\n", &p2);
-	printf("%#010x\n", p2);
 }
