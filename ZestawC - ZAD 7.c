@@ -23,6 +23,14 @@ void sortuj(double *tab, int n)
 void wypisz(double tab[], int n)
 {
     int i;
+    for (i=0; i<n; i++)
+    {
+        printf("%f ", tab[i]);
+    }
+}
+void wypiszodtylu(double tab[], int n)
+{
+    int i;
     for (i=n; i>0; i++)
     {
         printf("%f ", tab[i]);
@@ -34,6 +42,6 @@ int main()
     wypisz(tab, ROZMIAR);
     printf("\n");
     sortuj(tab, ROZMIAR);
-    wypisz(tab, ROZMIAR);
+    wypiszodtylu(tab, ROZMIAR);
     return 0;
 }
