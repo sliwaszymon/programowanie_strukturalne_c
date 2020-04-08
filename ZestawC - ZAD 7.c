@@ -4,7 +4,7 @@
 
 void sortuj(double *tab, int n)
 {
-    //algorytm sortowanie bąbelkowego
+    //algorytm sortowania bąbelkowego
     int i, j;
     double temp;
 	for (i = 0; i<n-1; i++)
