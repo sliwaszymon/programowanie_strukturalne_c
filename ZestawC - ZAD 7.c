@@ -23,7 +23,7 @@ void sortuj(double *tab, int n)
 void wypisz(double tab[], int n)
 {
     int i;
-    for (i=0; i<n; i++)
+    for (i=n; i>0; i++)
     {
         printf("%f ", tab[i]);
     }
