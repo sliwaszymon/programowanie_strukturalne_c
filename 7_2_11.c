@@ -13,9 +13,9 @@ struct Dane
 struct Dane wczytaj()
 {
     struct Dane dane;
-    printf("Jaka liczbe chcesz wpisac: \n1. Calkowita\n2. Wymierna\n");
+    printf("Jaka liczbe chcesz wpisac: \n0. Calkowita\n1. Wymierna\n");
     scanf("%d", &dane.tp);
-    if(dane.tp==1)
+    if(dane.tp==0)
     {
         printf("Podaj liczbe calkowita: ");
         scanf("%d", &dane.zaw.calkowita);
