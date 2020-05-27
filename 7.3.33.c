@@ -22,22 +22,23 @@ struct element *przesunBG(struct element *lista)
     lista->next = NULL;
     return pom;
 }
-struct element *przesunZG(struct element *lista)
+void przesunZG(struct element *lista)
 {
-    if((lista->next == NULL)||(lista->next->next == NULL))
+    if(lista->next != NULL)
     {
-        return lista;
+        if(lista->next->next != NULL)
+        {
+            struct element *wsk1 = lista->next;
+            while(wsk1->next->next != NULL)
+            {
+                wsk1 = wsk1->next;
+            }
+            struct element *wsk2 = wsk1->next;
+            wsk1->next = NULL;
+            wsk2->next = lista->next;
+            lista->next = wsk2;
+        }
     }
-    struct element *pom = malloc(sizeof(struct element));
-    pom = lista;
-    while(lista->next->next != NULL)
-    {
-        lista = lista->next;
-    }
-    lista->next->next = pom;
-    pom = lista->next;
-    lista->next = NULL;
-    return pom;
 }
 void wyswietlListeBezGlowy(struct element *lista)
 {
@@ -69,7 +70,9 @@ int main()
     listazglowa->next->next->i = -4;
     listazglowa->next->next->next = malloc(sizeof(struct element));
     listazglowa->next->next->next->i = -11;
-    listazglowa->next->next->next->next = NULL;
+    listazglowa->next->next->next->next = malloc(sizeof(struct element));
+    listazglowa->next->next->next->next->i = 7;
+    listazglowa->next->next->next->next->next = NULL;
     // ====BEZ GLOWY====
     struct element *listabezglowy = malloc(sizeof(struct element));
     listabezglowy->i = 3;
@@ -84,7 +87,7 @@ int main()
     wyswietlListeBezGlowy(listabezglowy2);
     printf("\n\n");
     wyswietlListeZGlowa(listazglowa);
-    struct element *listazglowa2 = przesunZG(listazglowa);
-    wyswietlListeZGlowa(listazglowa2);
+    przesunZG(listazglowa);
+    wyswietlListeZGlowa(listazglowa);
     return 0;
 }
